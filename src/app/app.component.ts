@@ -12,6 +12,7 @@ export class AppComponent {
   public consoleMessages: string[] = [];
   public userQuestion: string;
   userQuestionUpdate = new Subject<string>();
+  color = "blue";
 
   constructor() {
     // Debounce search.

@@ -1,7 +1,11 @@
-<input class="form-control" [(ngModel)]="userQuestion"
-type="text" name="userQuestion" id="userQuestions"
-(ngModelChange)="this.userQuestionUpdate.next($event)">
+<div>
+  <input class="form-control" [(ngModel)]="userQuestion"
+         type="text" name="userQuestion"
+         (ngModelChange)="this.userQuestionUpdate.next($event)">
 
-<ul>
-  <li *ngFor="let message of consoleMessages">{{message}}</li>
-</ul>
+  <div *ngIf="consoleMessages.length > 0" style="border: 1px solid red">
+    <ul>
+      <li *ngFor="let message of consoleMessages" (click)="color='red'" [ngStyle]="{'color': color}">{{message}}</li>
+    </ul>
+  </div>
+</div>
